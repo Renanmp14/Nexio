@@ -1,0 +1,8 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.renanmp14.nexio
+productName: Nexio
+executableName: Nexio
+files: []
+electronVersion: 29.4.6

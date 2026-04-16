@@ -1,5 +1,6 @@
 {
-  "name": "custom-browser",
+  "name": "nexio",
+  "productName": "Nexio",
   "version": "1.0.0",
   "main": "electron/main.js",
   "scripts": {
@@ -19,5 +20,10 @@
     "electron-builder": "^24.9.1",
     "vite": "^5.1.0",
     "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.renanmp14.nexio",
+    "productName": "Nexio",
+    "executableName": "Nexio"
   }
 }
