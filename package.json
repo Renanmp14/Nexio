@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "electron/main.js",
   "scripts": {
-    "dev": "concurrently \"vite\" \"electron .\"",
+    "dev": "concurrently \"vite\" \"wait-on tcp:5173 && electron .\"",
     "build": "vite build && electron-builder",
     "preview": "vite preview"
   },
