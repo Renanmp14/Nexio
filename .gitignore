@@ -1,1 +1,16 @@
 node_modules
+
+# Build outputs
+dist/
+release/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

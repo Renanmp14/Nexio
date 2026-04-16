@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBrowser } from '../context/BrowserContext'
 import { Icons } from '../icons/CustomIcons'
@@ -9,6 +9,10 @@ export default function NavigationBar({ webviewRef }) {
   const navigate = useNavigate()
 
   const activeTabData = tabs.find(t => t.id === activeTab)
+
+  useEffect(() => {
+    setInputUrl(activeTabData?.url || '')
+  }, [activeTabData?.url])
 
   const formatUrl = (url) => {
     if (!url) return ''
