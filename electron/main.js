@@ -182,11 +182,17 @@ ipcMain.handle('browser-data:clear', async (_event, options = {}) => {
 app.whenReady().then(() => {
   applyRuntimeBranding()
 
+  session.defaultSession.setPermissionRequestHandler((_webContents, _permission, callback) => {
+    callback(true)
+  })
+
+  session.defaultSession.setPermissionCheckHandler(() => true)
+
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     callback({
       responseHeaders: {
         ...details.responseHeaders,
-        'Content-Security-Policy': ["default-src 'self' 'unsafe-inline' 'unsafe-eval' *"]
+        'Content-Security-Policy': ["default-src 'self' 'unsafe-inline' 'unsafe-eval' * blob: data: mediastream:"]
       }
     })
   })
